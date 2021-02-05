@@ -12,7 +12,11 @@
 
 		<h1>Homepage</h1> 
 		<div>
-			hey there partner! <br />
+			{% if user.is_authenticated %}
+				howdy {{ user.username }}!
+			{% else %}
+				hey there partner!
+			{% endif %}
 			<strong>{{ boldmessage }}</strong><br/> 
 		</div>
 
