@@ -32,6 +32,11 @@ ALLOWED_HOSTS = []
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
+REGISTRATION_OPEN = True
+
+REGISTRATION_AUTO_LOGIN = True
+
+
 
 # Application definition
 
@@ -42,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rango'
+    'rango',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +127,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+LOGIN_REDIRECT_URL = 'rango:index'
+LOGIN_URL = 'auth_login'
 
 
 MEDIA_ROOT = MEDIA_DIR
